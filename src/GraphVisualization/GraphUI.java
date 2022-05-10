@@ -16,8 +16,8 @@ public class GraphUI {
 				"node#0 { shape: box; fill-color: orange;  } " +
 				"edge.marked {fill-color: red;}" +
 				"edge {text-size: 20px; text-alignment: above; size: 3px; fill-color: black; arrow-shape: arrow; arrow-size: 8px;}";
-		graph.setAttribute("ui.stylesheet", styleSheet);
-		//graph.addAttribute("ui.label", gName);
+		graph.addAttribute("ui.stylesheet", styleSheet);
+		graph.addAttribute("ui.label", gName);
 		graph.setAutoCreate(true);
         graph.setStrict(false);        
         graph.display();
@@ -27,8 +27,8 @@ public class GraphUI {
 			graph.addEdge(Integer.toString(e), Integer.toString(edges.get(e)), Integer.toString(edges.get(e+1)), true);
 		}
 
-		for (Node node : graph.nodes().toList())
-			node.setAttribute("ui.label", node.getId());
+		for (Node node : graph.getNodeSet())
+			node.addAttribute("ui.label", node.getId());
 
 	    
 		

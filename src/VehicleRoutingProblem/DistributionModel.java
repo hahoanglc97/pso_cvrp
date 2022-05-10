@@ -15,7 +15,7 @@ public class DistributionModel {
 	Store[] stores;
 	Vehicle[] vehicles;
 	
-	private static Random rand = new Random();
+	private static final Random rand = new Random();
 	
 	public DistributionModel(int storeCount, int[] vehicleCapacity, int vehicleCount,int msd, int msr){	
 		noOfStores = storeCount;
